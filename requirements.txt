@@ -1,0 +1,6 @@
+Flask
+jsonify 
+requests
+SQLAlchemy
+boto3
+uuid
