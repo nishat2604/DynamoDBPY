@@ -1,19 +1,20 @@
 import boto3
 from flask import Flask, request, jsonify
 from  boto3.dynamodb.conditions import Key
+from flask_cors import CORS
 import uuid
 #get Aws session
 
 dynamodb = boto3.resource(    'dynamodb',
     region_name='us-east-2',  # Make sure the region is correct
-    aws_access_key_id='#######',
-    aws_secret_access_key='****************'  )
+    aws_access_key_id='#####',
+    aws_secret_access_key='********'  )
 
 table = dynamodb.Table('CustomerUserInfo') 
 print(table)
     
 app = Flask(__name__)
-
+CORS(app)
 @app.route("/useradd", methods=['POST'])
 def useradd():
     print("PutItem succeeded:")
